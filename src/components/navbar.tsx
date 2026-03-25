@@ -73,6 +73,8 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <NavLink href="/" label="Accueil" />
           <NavLink href="/tarifs" label="Tarifs" />
+          <NavLink href="/portfolio" label="Portfolio" />
+          <NavLink href="/a-propos" label="A propos" />
           <NavLink href="/booking" label="Reserver" />
           <NavLink href="/conditions" label="Conditions" />
 
