@@ -9,59 +9,94 @@ const HOME_OFFERS = [
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10">
-      <section className="rounded-2xl border border-[#c7a85a]/35 bg-[#101010] p-8">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p className="text-xs tracking-[0.3em] text-[#c7a85a]">PJT PRODUCTIONS</p>
-            <h1 className="mt-3 text-4xl font-semibold text-[#f5e8c9]">
-              Photo, video et production visuelle
-            </h1>
-            <p className="mt-3 max-w-2xl text-[#d3d3d3]">
-              PJT Productions accompagne artistes, marques et evenements avec une
-              image forte et une execution haut de gamme.
-            </p>
-          </div>
+    <main className="mx-auto w-full max-w-6xl px-4 py-12">
+      {/* HERO SECTION */}
+      <section className="relative overflow-hidden rounded-3xl border border-[#c7a85a]/40 bg-gradient-to-br from-[#1a1a1a] via-[#101010] to-[#0d0d0d] p-12 shadow-2xl">
+        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-[#c7a85a]/10 to-transparent blur-3xl"></div>
 
-          <Link
-            href="/auth"
-            className="rounded-lg bg-[#c7a85a] px-4 py-2 text-sm font-medium text-black transition hover:bg-[#d5ba75]"
-          >
-            Se connecter
-          </Link>
+        <div className="relative flex flex-wrap items-start justify-between gap-6">
+          <div className="flex-1 min-w-0">
+            <p className="text-xs tracking-[0.4em] font-bold text-[#d4af37]">PJT PRODUCTIONS</p>
+            <h1 className="mt-4 text-5xl font-bold leading-tight text-[#f5e8c9]">
+              Production visuelle de prestige
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-[#e0e0e0]">
+              Clips cinematographiques, photographie professionnelle et contenu premium pour artistes, marques et evenements.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/booking"
+                className="group relative rounded-lg bg-gradient-to-r from-[#c7a85a] to-[#d4af37] px-6 py-3 font-semibold text-black transition-all hover:shadow-lg hover:shadow-[#c7a85a]/50 hover:scale-105"
+              >
+                Faire une demande
+                <span className="absolute inset-0 rounded-lg bg-white/20 opacity-0 transition-opacity group-hover:opacity-100"></span>
+              </Link>
+              <Link
+                href="/tarifs"
+                className="rounded-lg border-2 border-[#c7a85a]/60 px-6 py-3 font-semibold text-[#f5e8c9] transition-all hover:bg-[#c7a85a]/15 hover:border-[#d4af37]"
+              >
+                Voir tarifs
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="mt-8">
-        <h2 className="text-2xl font-semibold text-[#f5e8c9]">Tarifs</h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
+      {/* OFFRES RAPIDES */}
+      <section className="mt-14">
+        <div className="mb-6">
+          <h2 className="text-3xl font-bold text-[#f5e8c9]">Offres principales</h2>
+          <div className="mt-1 h-1 w-16 bg-gradient-to-r from-[#c7a85a] to-[#d4af37]"></div>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
           {HOME_OFFERS.map((offer) => (
             <article
               key={offer.name}
-              className="rounded-xl border border-[#c7a85a]/30 bg-[#101010] p-5"
+              className="group relative overflow-hidden rounded-2xl border border-[#c7a85a]/30 bg-gradient-to-br from-[#1a1a1a] to-[#101010] p-6 shadow-lg transition-all hover:border-[#d4af37]/60 hover:shadow-xl hover:shadow-[#c7a85a]/20 hover:-translate-y-1"
             >
-              <h3 className="text-lg font-semibold text-[#f5e8c9]">{offer.name}</h3>
-              <p className="mt-2 text-[#c7a85a]">{offer.price}</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#c7a85a]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+
+              <div className="relative">
+                <h3 className="text-xl font-bold text-[#f5e8c9]">{offer.name}</h3>
+                <p className="mt-3 text-lg font-semibold text-[#d4af37]">{offer.price}</p>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+      {/* FORMULAIRE + À PROPOS */}
+      <section className="mt-14 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
         <BookingForm />
 
-        <aside className="rounded-2xl border border-[#c7a85a]/30 bg-[#101010] p-6">
-          <h2 className="text-2xl font-semibold text-[#f5e8c9]">A propos</h2>
-          <p className="mt-3 text-sm leading-7 text-[#d3d3d3]">
-            PJT Productions, dirige par Mehdi, realise des contenus photo et
-            video au style cinematographique. Notre approche combine direction
-            artistique, precision technique et storytelling pour valoriser votre
-            image de marque.
-          </p>
-          <p className="mt-3 text-sm leading-7 text-[#d3d3d3]">
-            Utilisez le formulaire pour envoyer votre demande, puis suivez son
-            statut depuis votre dashboard.
-          </p>
+        <aside className="relative overflow-hidden rounded-2xl border border-[#c7a85a]/30 bg-gradient-to-br from-[#1a1a1a] to-[#101010] p-8 shadow-lg">
+          <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-[#c7a85a]/10 to-transparent blur-3xl"></div>
+
+          <div className="relative">
+            <h2 className="text-2xl font-bold text-[#f5e8c9]">A propos</h2>
+            <div className="mt-2 h-1 w-12 bg-gradient-to-r from-[#c7a85a] to-[#d4af37]"></div>
+
+            <p className="mt-5 leading-8 text-[#d3d3d3]">
+              <span className="font-semibold text-[#f5e8c9]">Mehdi</span> et son equipe de PJT Productions creent des contenus photo et video au style cinematographique. Direction artistique, precision technique et storytelling puissant pour valoriser votre marque.
+            </p>
+
+            <ul className="mt-6 space-y-2 text-sm text-[#d3d3d3]">
+              <li className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-[#c7a85a]"></span>
+                Disponible 7j/7
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-[#c7a85a]"></span>
+                Devis gratuit
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-[#c7a85a]"></span>
+                Livraisons rapides
+              </li>
+            </ul>
+          </div>
         </aside>
       </section>
     </main>
