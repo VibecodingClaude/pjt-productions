@@ -10,33 +10,46 @@ const HOME_OFFERS = [
 export default function Home() {
   return (
     <main className="mx-auto w-full max-w-6xl px-4 py-12">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden rounded-3xl border border-[#c7a85a]/40 bg-gradient-to-br from-[#1a1a1a] via-[#101010] to-[#0d0d0d] p-12 shadow-2xl">
-        <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br from-[#c7a85a]/10 to-transparent blur-3xl"></div>
+      {/* HERO SECTION - CINEMATIC */}
+      <section className="relative -mx-4 mb-14 overflow-hidden rounded-3xl border-b-4 border-[#c7a85a] bg-black">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/portfolio-images/proj-017.jpg')",
+            opacity: 0.3,
+          }}
+        ></div>
 
-        <div className="relative flex flex-wrap items-start justify-between gap-6">
-          <div className="flex-1 min-w-0">
-            <p className="text-xs tracking-[0.4em] font-bold text-[#d4af37]">PJT PRODUCTIONS</p>
-            <h1 className="mt-4 text-5xl font-bold leading-tight text-[#f5e8c9]">
-              Production visuelle de prestige
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+
+        {/* Content */}
+        <div className="relative px-12 py-20 md:py-32">
+          <div className="max-w-3xl">
+            <p className="text-sm tracking-[0.5em] font-bold text-[#d4af37] animate-pulse">
+              ★ PJT PRODUCTIONS
+            </p>
+            <h1 className="mt-6 text-6xl md:text-7xl font-black leading-tight text-white">
+              Production <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#f5e8c9]">Cinématographique</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-[#e0e0e0]">
-              Clips cinematographiques, photographie professionnelle et contenu premium pour artistes, marques et evenements.
+            <p className="mt-6 max-w-2xl text-xl leading-8 text-[#e0e0e0]">
+              Clips, photos et vidéos professionnelles qui transforment votre vision en réalité visuelle exceptionnelle.
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/booking"
-                className="group relative rounded-lg bg-gradient-to-r from-[#c7a85a] to-[#d4af37] px-6 py-3 font-semibold text-black transition-all hover:shadow-lg hover:shadow-[#c7a85a]/50 hover:scale-105"
+                className="group relative rounded-lg bg-gradient-to-r from-[#d4af37] to-[#f5e8c9] px-8 py-4 font-bold text-black transition-all hover:shadow-2xl hover:shadow-[#d4af37]/50 hover:scale-110 hover:-translate-y-1"
               >
-                Faire une demande
-                <span className="absolute inset-0 rounded-lg bg-white/20 opacity-0 transition-opacity group-hover:opacity-100"></span>
+                Démarrer un projet
+                <span className="absolute inset-0 rounded-lg bg-white/30 opacity-0 transition-opacity group-hover:opacity-100"></span>
               </Link>
               <Link
-                href="/tarifs"
-                className="rounded-lg border-2 border-[#c7a85a]/60 px-6 py-3 font-semibold text-[#f5e8c9] transition-all hover:bg-[#c7a85a]/15 hover:border-[#d4af37]"
+                href="/portfolio"
+                className="group rounded-lg border-2 border-[#d4af37] px-8 py-4 font-bold text-[#d4af37] transition-all hover:bg-[#d4af37]/10 hover:shadow-lg"
               >
-                Voir tarifs
+                Voir portfolio →
               </Link>
             </div>
           </div>

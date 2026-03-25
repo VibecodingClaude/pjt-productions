@@ -5,45 +5,45 @@ import { useState } from 'react';
 const PROJECTS = [
   {
     id: 1,
-    title: "Projet 1",
+    title: "Clip Cinématographique",
     category: "Clips",
-    description: "Ajoute ta description",
-    image: "placeholder-1"
+    description: "Production haut de gamme avec direction artistique complète",
+    image: "/portfolio-images/proj-008.jpg"
   },
   {
     id: 2,
-    title: "Projet 2",
+    title: "Séance Photo Studio",
     category: "Photos",
-    description: "Ajoute ta description",
-    image: "placeholder-2"
+    description: "Portraits et contenus professionnels en studio",
+    image: "/portfolio-images/proj-015.jpg"
   },
   {
     id: 3,
-    title: "Projet 3",
+    title: "Production Landscape",
     category: "Vidéos",
-    description: "Ajoute ta description",
-    image: "placeholder-3"
+    description: "Cinématographie documentaire et paysages",
+    image: "/portfolio-images/proj-017.jpg"
   },
   {
     id: 4,
-    title: "Projet 4",
+    title: "Clip Artistique",
     category: "Clips",
-    description: "Ajoute ta description",
-    image: "placeholder-4"
+    description: "Réalisation créative avec effets visuels",
+    image: "/portfolio-images/proj-025.jpg"
   },
   {
     id: 5,
-    title: "Projet 5",
+    title: "Contenu Social Media",
     category: "Photos",
-    description: "Ajoute ta description",
-    image: "placeholder-5"
+    description: "Visuels optimisés pour réseaux sociaux",
+    image: "/portfolio-images/proj-024.jpg"
   },
   {
     id: 6,
-    title: "Projet 6",
+    title: "Reportage Événementiel",
     category: "Vidéos",
-    description: "Ajoute ta description",
-    image: "placeholder-6"
+    description: "Couverture événementielle professionnelle",
+    image: "/portfolio-images/proj-023.jpg"
   },
 ];
 
@@ -99,37 +99,36 @@ export default function PortfolioPage() {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              className="group relative overflow-hidden rounded-2xl border border-[#c7a85a]/30 bg-gradient-to-br from-[#1a1a1a] to-[#101010] shadow-lg transition-all hover:border-[#d4af37]/60 hover:shadow-xl hover:-translate-y-2"
+              className="group relative overflow-hidden rounded-2xl border border-[#c7a85a]/40 bg-black shadow-xl transition-all hover:border-[#d4af37]/80 hover:shadow-2xl hover:shadow-[#d4af37]/30 hover:-translate-y-2"
             >
-              {/* IMAGE PLACEHOLDER */}
-              <div className="relative h-64 w-full overflow-hidden bg-gradient-to-br from-[#2a2a2a] to-[#0d0d0d]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-4xl">🎬</p>
-                    <p className="mt-2 text-sm text-[#d3d3d3]">Image du projet</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+              {/* IMAGE */}
+              <div className="relative h-72 w-full overflow-hidden bg-black">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70 transition-opacity group-hover:opacity-50"></div>
               </div>
 
               {/* CONTENU */}
               <div className="relative p-6">
-                <p className="text-xs font-semibold text-[#d4af37] tracking-[0.15em]">
+                <p className="text-xs font-bold text-[#d4af37] tracking-[0.2em] uppercase">
                   {project.category}
                 </p>
-                <h3 className="mt-3 text-xl font-bold text-[#f5e8c9]">
+                <h3 className="mt-3 text-2xl font-bold text-[#f5e8c9]">
                   {project.title}
                 </h3>
-                <p className="mt-2 text-sm text-[#d3d3d3]">
+                <p className="mt-2 text-sm leading-6 text-[#d3d3d3]">
                   {project.description}
                 </p>
 
                 {/* CTA */}
                 <a
                   href="/booking"
-                  className="mt-4 inline-block rounded-lg border border-[#c7a85a]/50 px-4 py-2 text-sm font-semibold text-[#d4af37] transition-all hover:bg-[#c7a85a]/15 hover:border-[#d4af37]"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#f5e8c9] px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:shadow-[#d4af37]/50"
                 >
-                  En savoir plus
+                  Devis →
                 </a>
               </div>
             </article>
