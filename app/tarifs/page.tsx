@@ -1,11 +1,11 @@
 export default function TarifsPage() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-10">
-      <section>
-        <p className="text-xs tracking-[0.3em] text-[#c7a85a]">PJT PRODUCTIONS</p>
-        <h1 className="mt-2 text-3xl font-semibold text-[#f5e8c9]">Tarifs</h1>
-        <p className="mt-2 text-[#d3d3d3]">
-          Grille tarifaire complète · Artistes & Entreprises
+    <main className="mx-auto w-full max-w-6xl px-4 py-12 bg-white">
+      <section className="py-12 border-b border-[#0A0A0A]/10">
+        <p className="text-xs tracking-[0.4em] font-semibold text-[#0A0A0A] uppercase">Grille tarifaire</p>
+        <h1 className="mt-4 text-5xl font-black text-[#0A0A0A]">Tarifs</h1>
+        <p className="mt-3 text-lg text-[#4a4a4a]">
+          Tarifs complets · Artistes & Entreprises
         </p>
       </section>
 
