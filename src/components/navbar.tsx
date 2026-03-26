@@ -18,8 +18,8 @@ function NavLink({ href, label }: { href: string; label: string }) {
       href={href}
       className={`text-sm font-medium transition-all ${
         isActive
-          ? "text-[#00D9FF] font-bold"
-          : "text-[#E0E0E0] hover:text-[#FF006E] hover:font-semibold"
+          ? "text-[#0A0A0A] font-bold border-b-2 border-[#0A0A0A]"
+          : "text-[#4a4a4a] hover:text-[#0A0A0A]"
       }`}
     >
       {label}
@@ -66,9 +66,9 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gradient-to-r from-[#FF006E] via-[#00D9FF] to-[#FF006E] bg-gradient-to-b from-[#0a0a0a] to-[#0a0a0a]/80 backdrop-blur-lg shadow-2xl">
+    <header className="sticky top-0 z-50 border-b border-[#0A0A0A]/10 bg-[#E5E3DC] backdrop-blur-sm">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="text-lg font-black tracking-[0.3em] bg-gradient-to-r from-[#FF006E] to-[#00D9FF] bg-clip-text text-transparent">
+        <Link href="/" className="text-lg font-black tracking-[0.3em] text-[#0A0A0A]">
           PJT
         </Link>
 
@@ -87,7 +87,7 @@ export default function Navbar() {
                 type="button"
                 onClick={handleLogout}
                 disabled={loadingLogout}
-                className="rounded-md border-2 border-[#FF006E] px-3 py-1.5 text-sm text-[#FF006E] font-semibold transition hover:bg-[#FF006E] hover:text-black disabled:opacity-60"
+                className="rounded-md border border-[#0A0A0A] px-3 py-1.5 text-sm text-[#0A0A0A] font-semibold transition hover:bg-[#0A0A0A] hover:text-[#E5E3DC] disabled:opacity-60"
               >
                 {loadingLogout ? "..." : "Logout"}
               </button>
@@ -95,7 +95,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/auth"
-              className="rounded-md bg-gradient-to-r from-[#FF006E] to-[#00D9FF] px-4 py-2 text-sm font-bold text-black transition hover:shadow-lg hover:shadow-[#FF006E]/50"
+              className="rounded-md bg-[#0A0A0A] px-4 py-2 text-sm font-bold text-[#E5E3DC] transition hover:shadow-lg hover:shadow-[#0A0A0A]/50"
             >
               Se connecter
             </Link>
