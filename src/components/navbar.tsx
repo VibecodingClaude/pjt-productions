@@ -16,8 +16,10 @@ function NavLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className={`text-sm transition ${
-        isActive ? "text-[#f5e8c9]" : "text-[#d3d3d3] hover:text-[#f5e8c9]"
+      className={`text-sm font-medium transition-all ${
+        isActive
+          ? "text-[#00D9FF] font-bold"
+          : "text-[#E0E0E0] hover:text-[#FF006E] hover:font-semibold"
       }`}
     >
       {label}
@@ -64,10 +66,10 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#c7a85a]/25 bg-[#0d0d0d]/95 backdrop-blur">
-      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3">
-        <Link href="/" className="text-sm tracking-[0.28em] text-[#c7a85a]">
-          PJT PRODUCTIONS
+    <header className="sticky top-0 z-50 border-b border-gradient-to-r from-[#FF006E] via-[#00D9FF] to-[#FF006E] bg-gradient-to-b from-[#0a0a0a] to-[#0a0a0a]/80 backdrop-blur-lg shadow-2xl">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4">
+        <Link href="/" className="text-lg font-black tracking-[0.3em] bg-gradient-to-r from-[#FF006E] to-[#00D9FF] bg-clip-text text-transparent">
+          PJT
         </Link>
 
         <div className="flex items-center gap-4">
@@ -85,7 +87,7 @@ export default function Navbar() {
                 type="button"
                 onClick={handleLogout}
                 disabled={loadingLogout}
-                className="rounded-md border border-[#c7a85a]/40 px-3 py-1.5 text-sm text-[#f5e8c9] transition hover:bg-[#c7a85a]/15 disabled:opacity-60"
+                className="rounded-md border-2 border-[#FF006E] px-3 py-1.5 text-sm text-[#FF006E] font-semibold transition hover:bg-[#FF006E] hover:text-black disabled:opacity-60"
               >
                 {loadingLogout ? "..." : "Logout"}
               </button>
@@ -93,7 +95,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/auth"
-              className="rounded-md bg-[#c7a85a] px-3 py-1.5 text-sm font-medium text-black transition hover:bg-[#d5ba75]"
+              className="rounded-md bg-gradient-to-r from-[#FF006E] to-[#00D9FF] px-4 py-2 text-sm font-bold text-black transition hover:shadow-lg hover:shadow-[#FF006E]/50"
             >
               Se connecter
             </Link>
