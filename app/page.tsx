@@ -1,5 +1,9 @@
+'use client';
+
 import Link from "next/link";
 import BookingForm from "@/src/components/booking-form";
+import { useGsapAnimations } from '@/src/hooks/useGsapAnimations';
+import { useCustomCursor } from '@/src/hooks/useCustomCursor';
 
 const HOME_OFFERS = [
   { name: "Clips", price: "A partir de 450 EUR" },
@@ -8,8 +12,11 @@ const HOME_OFFERS = [
 ];
 
 export default function Home() {
+  const containerRef = useGsapAnimations();
+  useCustomCursor();
+
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 py-12">
+    <main ref={containerRef} className="mx-auto w-full max-w-6xl px-4 py-12">
       {/* HERO SECTION - CHIARA LUZZANA STYLE */}
       <section className="relative -mx-4 mb-16 overflow-hidden bg-[#E5E3DC] py-32 md:py-48">
         {/* Background Image Subtle */}
